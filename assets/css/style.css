@@ -1,22 +1,51 @@
+:root {
+    --bg-color-light: #f4f4f4;
+    --text-color-light: #333;
+    --link-color-light: #3498db;
+    --link-hover-color-light: #2c3e50;
+
+    --bg-color-dark: #1e1e1e;
+    --text-color-dark: #ddd;
+    --link-color-dark: #4dabf7;
+    --link-hover-color-dark: #80c4ff;
+
+    --transition-time: 0.3s;
+}
+
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    line-height: 1.6;
+    background-color: var(--bg-color-light);
+    color: var(--text-color-light);
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.dark-mode body {
+    background-color: var(--bg-color-dark);
+    color: var(--text-color-dark);
 }
 
 h1, h2, h3 {
-    color: #333;
+    color: inherit;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 a {
-    color: #3498db;
+    color: var(--link-color-light);
     text-decoration: none;
+    transition: color var(--transition-time);
 }
 
 a:hover {
-    color: #2c3e50;
+    color: var(--link-hover-color-light);
+}
+
+.dark-mode a {
+    color: var(--link-color-dark);
+}
+
+.dark-mode a:hover {
+    color: var(--link-hover-color-dark);
 }
 
 .navbar {
@@ -34,4 +63,31 @@ a:hover {
 
 .navbar a:hover {
     background-color: #575757;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color var(--transition-time), color var(--transition-time);
+}
+
+.theme-toggle:hover {
+    background-color: #575757;
+}
+
+.dark-mode .theme-toggle {
+    background-color: #ddd;
+    color: #333;
+}
+
+.dark-mode .theme-toggle:hover {
+    background-color: #aaa;
 }
