@@ -1,0 +1,9 @@
+title: Minecraft Server Forum
+theme: minima
+markdown: kramdown
+
+# Навигация
+header_pages:
+  - index.md
+  - info.md
+  - guides/index.md
